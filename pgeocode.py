@@ -252,7 +252,7 @@ class Nominatim:
         if os.path.exists(data_path):
             data = pd.read_csv(
                 data_path,
-                dtype={"postal_code": str},
+                dtype={"country_code": str, "postal_code": str, "place_name": str, "state_name": str, "state_code": str, "county_name": str, "county_code": str, "community_name": str, "community_code": str, "latitude": float, "longitude": float, "accuracy": float},
                 na_values=NA_VALUES,
                 keep_default_na=False,
             )
@@ -264,7 +264,7 @@ class Nominatim:
                     sep="\t",
                     header=None,
                     names=DATA_FIELDS,
-                    dtype={"postal_code": str},
+                    dtype={"country_code": str, "postal_code": str, "place_name": str, "state_name": str, "state_code": str, "county_name": str, "county_code": str, "community_name": str, "community_code": str, "latitude": float, "longitude": float, "accuracy": float},
                     na_values=NA_VALUES,
                     keep_default_na=False,
                 )
